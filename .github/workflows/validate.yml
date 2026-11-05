@@ -1,10 +1,9 @@
 name: Validar base
 on:
   pull_request:
-    paths: ["data/**", "schema/validate.py"]
+    branches: [main]
   push:
     branches: [main]
-    paths: ["data/**"]
 jobs:
   validar:
     runs-on: ubuntu-latest
@@ -14,5 +13,6 @@ jobs:
         with: { python-version: "3.12" }
       - name: Checagem de integridade (totais e reconciliacao r2 x r3)
         run: python schema/validate.py
-# Regra: nenhum PR que altere data/ entra sem este check verde.
-# Proteja a branch main exigindo este status check (Settings > Branches > Branch protection).
+# Roda em TODO PR para main (e no push em main), para que o status check "validar"
+# sempre reporte. Um check exigido que nunca roda deixa o PR travado em "Expected".
+# A branch main exige este check verde via ruleset (Settings > Rules).
