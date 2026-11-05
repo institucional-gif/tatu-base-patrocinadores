@@ -26,4 +26,4 @@ R$ 12,23 bi de captação PJ em 2022–2026, 59.045 aportes. São Paulo (38,9%) 
 - Dados são públicos → baixo risco de dados. A proteção real é de **integridade** (ninguém altera a base sem PR+validação) e de **acesso ao produto de consulta** (só e-mails do domínio — planilha/app, não o repo).
 - Nenhum segredo neste repo. Chaves do app ficam em variáveis de ambiente / cofre, nunca em `data/` nem em commit.
 
-**Dono:** _[nomear responsável]_ · **Cadência de revisão:** trimestral.
+**Dono:** _Jaco Oliveira_ · **Cadência de revisão:** trimestral.
