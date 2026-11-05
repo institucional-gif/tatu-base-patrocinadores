@@ -22,8 +22,8 @@ R$ 12,23 bi de captação PJ em 2022–2026, 59.045 aportes. São Paulo (38,9%) 
 4. Merge só com check verde + revisão do dono.
 
 ## Segurança (resumo — ver docs/SEGURANCA.md)
-- Repositório **privado**, dentro da org Tatu Cult no GitHub, com **2FA obrigatório** para toda a org e **branch protection** em `main`.
-- Dados são públicos → baixo risco de dados. A proteção real é de **integridade** (ninguém altera a base sem PR+validação) e de **acesso ao produto** (só e-mails do domínio).
+- Repositório **público** (o dado já é público: SalicNet/MinC, PJ), na org Tatu Cult no GitHub, com **branch protection aplicada** em `main` (PR obrigatório + status check `validar` verde) e **2FA na conta**.
+- Dados são públicos → baixo risco de dados. A proteção real é de **integridade** (ninguém altera a base sem PR+validação) e de **acesso ao produto de consulta** (só e-mails do domínio — planilha/app, não o repo).
 - Nenhum segredo neste repo. Chaves do app ficam em variáveis de ambiente / cofre, nunca em `data/` nem em commit.
 
 **Dono:** _[nomear responsável]_ · **Cadência de revisão:** trimestral.
