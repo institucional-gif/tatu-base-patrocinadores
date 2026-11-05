@@ -3,7 +3,7 @@
 Dado é **público** (SalicNet/MinC, PJ). O risco real não é vazamento de dado — é **integridade** da base e **controle de acesso** à ferramenta. Princípio: conter no ambiente primeiro, orientar o comportamento depois.
 
 ## Checklist de acesso (quem entra)
-- [ ] GitHub: repositório **privado** na org Tatu Cult; **2FA obrigatório** para toda a org; `main` com **branch protection** (PR + 1 revisão + status check `validate.py` verde).
+- [ ] GitHub: repositório **público** (o dado já é público) na org Tatu Cult; **2FA na conta**; `main` com **branch protection aplicada** via ruleset — PR obrigatório + status check `validar` verde + bloqueio de force-push e de deleção da branch. (Revisão exigida: 0 enquanto solo; subir para 1 quando houver 2º membro.)
 - [ ] Produto (se Cenário B): login por **SSO Google Workspace (OIDC)** → só `@tatucultural.com.br`; 2FA herdado do Workspace. Sem SSO: Supabase Auth + **TOTP** + hook que rejeita e-mail fora do domínio.
 - [ ] Revisão **trimestral** de quem tem acesso (repo e produto). Saída da equipe → revogação imediata (checklist de offboarding).
 
@@ -19,7 +19,7 @@ Dado é **público** (SalicNet/MinC, PJ). O risco real não é vazamento de dado
 
 ## Catálogo de conectores (manter em `15_MCP`)
 Uma linha por conector: nome · o que acessa · escopo · quem autorizou · data · versão · dado pessoal? · última revisão · dono.
-Conectores previstos: **GitHub** (repo privado, escopo mínimo), **Supabase** (projeto, chaves separadas anon/service), **Make** (se usado para a carga). Conector sem linha no catálogo = não autorizado.
+Conectores previstos: **GitHub** (repo público, escopo mínimo), **Supabase** (projeto, chaves separadas anon/service), **Make** (se usado para a carga). Conector sem linha no catálogo = não autorizado.
 
 ## LGPD (controles técnicos)
 - Base sem dado pessoal de titulares (PJ, público). Única PII: e-mail da equipe para login → minimizar e reter só enquanto a pessoa estiver na equipe.
